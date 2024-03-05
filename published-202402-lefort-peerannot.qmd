@@ -39,22 +39,21 @@ keywords: [crowdsourcing, label noise, task difficulty, worker ability, classifi
 citation:
   type: article-journal
   container-title: "Computo"
-  doi: "xxxx"
-  url: https://computo.sfds.asso.fr/template-computo-quarto
-  publisher: "Société Française de Statistique"
+  doi: "10.57750/qmaz-gr91"
+  publisher: "French Statistical Society"
   issn: "2824-7795"
+  pdf-url: "https://computo.sfds.asso.fr/published-202402-lefort-peerannot/published-202402-lefort-peerannot.pdf"
+  url:  "https://computo.sfds.asso.fr/published-202402-lefort-peerannot/"
 bibliography: references.bib
 github-user: computorg
-repo: "template-computo-python"
+repo: "published-202402-lefort-peerannot"
 draft: false # set to false once the build is running
 published: true # will be set to true once accepted
+google-scholar: true  
+jupyter: python3
 format:
   computo-html: default
   computo-pdf: default
-jupyter: python3
-number-sections: true
-execute:  # to remove at the end
-  cache: true
 ---
 
 # Introduction: crowdsourcing in image classification
