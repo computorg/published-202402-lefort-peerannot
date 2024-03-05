@@ -26,8 +26,9 @@ author:
     orcid: 0000-0002-3181-0634
     affiliations:
       - name: IMAG, Univ Montpellier, CNRS, IUF
-date: last-modified
+date: publication-date
 date-modified: last-modified
+google-scholar: true
 description: |
   Crowdsourcing is a quick and easy way to collect labels for large datasets, involving many workers.
   However, it is common for workers to disagree with each other.
@@ -39,13 +40,13 @@ keywords: [crowdsourcing, label noise, task difficulty, worker ability, classifi
 citation:
   type: article-journal
   container-title: "Computo"
-  doi: "xxxx"
-  url: https://computo.sfds.asso.fr/template-computo-quarto
+  doi: "10.57750/qmaz-gr91"
+  url: https://computo.sfds.asso.fr/published-202402-lefort-peerannot/
   publisher: "Société Française de Statistique"
   issn: "2824-7795"
 bibliography: references.bib
-github-user: computorg
-repo: "template-computo-python"
+github-user: tanglef
+repo: "computo_2023"
 draft: false # set to false once the build is running
 published: true # will be set to true once accepted
 format:
