@@ -12,7 +12,10 @@ simus/
 
 .jupyter_cache/
 
-datasets/*/**
-!datasets/*/*.py
-!datasets/*/*.json
+# datasets/*/**
+# !datasets/*/*.py
+# !datasets/*/*.json
 /.luarc.json
+
+__pycache__
+published-202402-lefort-peerannot.ipynb

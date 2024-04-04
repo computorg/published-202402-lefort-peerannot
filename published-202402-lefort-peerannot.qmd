@@ -160,7 +160,7 @@ To install them, run the `install` command from `peerannot`:
 ! peerannot install ./datasets/cifar10H/cifar10h.py
 ```
 
-For both $\texttt{CIFAR-10H}$ and $\texttt{LabelMe}$, the dataset was  was originally released for standard supervised learning (classification).
+For both $\texttt{CIFAR-10H}$ and $\texttt{LabelMe}$, the dataset was originally released for standard supervised learning (classification).
 Both datasets has been reannotated by a crowd or workers.
 These labels are used as true labels in evaluations and visualizations.
 Examples of $\texttt{CIFAR-10H}$ images are available in @fig-cifarh, and $\texttt{LabelMe}$ examples in @fig-labelme in Appendix.
