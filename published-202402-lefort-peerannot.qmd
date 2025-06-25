@@ -11,7 +11,7 @@ author:
       - name: IMAG, Univ Montpellier, CNRS, Inria, LIRMM
   - name: Benjamin Charlier
     email: benjamin.charlier@umontpellier.fr
-    url: https://imag.umontpellier.fr/~charlier/index.php?page=index&lang=en
+    url: https://miat.inrae.fr/bcharlier/
     affiliations:
       - name: IMAG, Univ Montpellier, CNRS
   - name: Alexis Joly
@@ -26,7 +26,7 @@ author:
     orcid: 0000-0002-3181-0634
     affiliations:
       - name: IMAG, Univ Montpellier, CNRS, IUF
-date: last-modified
+date: 05/07/2024
 date-modified: last-modified
 description: |
   Crowdsourcing is a quick and easy way to collect labels for large datasets, involving many workers.
@@ -42,8 +42,6 @@ citation:
   doi: "10.57750/qmaz-gr91"
   publisher: "French Statistical Society"
   issn: "2824-7795"
-  pdf-url: "https://computo.sfds.asso.fr/published-202402-lefort-peerannot/published-202402-lefort-peerannot.pdf"
-  url:  "https://computo.sfds.asso.fr/published-202402-lefort-peerannot/"
 bibliography: references.bib
 github-user: computorg
 repo: "published-202402-lefort-peerannot"

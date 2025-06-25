@@ -1,0 +1,29 @@
+name: peerannot
+channels:
+  - conda-forge
+dependencies:
+  - jupyter
+  - jupyter-cache
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - seaborn
+  - plotly
+  - scikit-learn
+  - tqdm
+  - download
+  - pooch
+  - ipython
+  - click
+  - dash
+  - dash-bootstrap-components
+  - dash-daq
+  - Pillow
+  - pip:
+    - peerannot
+    - torch
+    - torchvision
+    - torchmetrics
+
+
