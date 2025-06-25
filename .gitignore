@@ -1,21 +1,26 @@
 *.swp
 _build
-content.html
-
 /.quarto/
-
 _extensions/
-
 content_files/
+/.luarc.json
+/*_files
+/*_cache
+/_freeze
+
+DS_Store
 
 simus/
 
 .jupyter_cache/
+_environment
+/.micromamba/
 
-# datasets/*/**
-# !datasets/*/*.py
-# !datasets/*/*.json
-/.luarc.json
+_site/
+logo_notext_white.png
 
 __pycache__
 published-202402-lefort-peerannot.ipynb
+published-202402-lefort-peerannot.html
+published-202402-lefort-peerannot.pdf
+
