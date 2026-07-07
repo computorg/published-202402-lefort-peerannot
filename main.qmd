@@ -365,8 +365,9 @@ Other arguments are available and described in the `--help` description.
 ```{python}
 #| code-fold: false
 #| output: false
-for strat in ["MV", "NaiveSoft", "DS", "GLAD", "DSWC[L=5]", "DSWC[L=10]"]:
-  ! peerannot aggregate ./simus/independent/ -s {strat}
+for strat in ["majority_voting", "naive_soft", "glad", "dawid_skene_clust[L=5]", "dawid_skene_clust[L=10]"]:
+  ! peerannot aggregate ./simus/independent/ -s "{strat}"
+utx.run_dawid_skene("./simus/independent")
 ```
 
 ```{python}
@@ -378,8 +379,8 @@ import numpy as np
 from IPython.display import display
 simu_indep = Path.cwd() / 'simus' / "independent"
 results = {
-  "mv": [], "naivesoft": [], "glad": [],
-  "ds": [], "dswc[l=5]": [], "dswc[l=10]": []
+  "majority_voting": [], "naive_soft": [], "glad": [],
+  "dawid_skene": [], "dawid_skene_clust[l=5]": [], "dawid_skene_clust[l=10]": []
   }
 for strategy in results.keys():
   path_labels = simu_indep / "labels" / f"labels_independent-confusion_{strategy}.npy"
@@ -394,8 +395,8 @@ for strategy in results.keys():
           )
         )
   results[strategy].append(acc)
-results["NS"] = results["naivesoft"]
-results.pop("naivesoft")
+results["NS"] = results["naive_soft"]
+results.pop("naive_soft")
 results = pd.DataFrame(results, index=['AccTrain'])
 results.columns = map(str.upper, results.columns)
 results = results.style.set_table_styles(
@@ -441,8 +442,9 @@ With the obtained answers, we can look at the aforementioned aggregation strateg
 ```{python}
 #| code-fold: false
 #| output: false
-for strat in ["MV", "NaiveSoft", "DS", "GLAD", "DSWC[L=5]", "DSWC[L=10]"]:
-  ! peerannot aggregate ./simus/independent-imbalanced/ -s {strat}
+for strat in ["majority_voting", "naive_soft", "glad", "dawid_skene_clust[L=5]", "dawid_skene_clust[L=10]"]:
+  ! peerannot aggregate ./simus/independent-imbalanced/ -s "{strat}"
+utx.run_dawid_skene("./simus/independent-imbalanced")
 ```
 
 ```{python}
@@ -454,8 +456,8 @@ import numpy as np
 from IPython.display import display
 simu_indep = Path.cwd() / 'simus' / "independent-imbalanced"
 results = {
-  "mv": [], "naivesoft": [], "glad": [],
-  "ds": [], "dswc[l=5]": [], "dswc[l=10]": []
+  "majority_voting": [], "naive_soft": [], "glad": [],
+  "dawid_skene": [], "dawid_skene_clust[l=5]": [], "dawid_skene_clust[l=10]": []
   }
 for strategy in results.keys():
   path_labels = simu_indep / "labels" / f"labels_independent-confusion_{strategy}.npy"
@@ -470,8 +472,8 @@ for strategy in results.keys():
           )
         )
   results[strategy].append(acc)
-results["NS"] = results["naivesoft"]
-results.pop("naivesoft")
+results["NS"] = results["naive_soft"]
+results.pop("naive_soft")
 results = pd.DataFrame(results, index=['AccTrain'])
 results.columns = map(str.upper, results.columns)
 results = results.style.set_table_styles([dict(selector='th', props=[('text-align', 'center')])])
@@ -517,8 +519,9 @@ With the obtained answers, we can look at the aforementioned aggregation strateg
 ```{python}
 #| code-fold: false
 #| output: false
-for strat in ["MV", "NaiveSoft", "DS", "GLAD", "DSWC[L=5]", "DSWC[L=6]", "DSWC[L=10]"]:
-  ! peerannot aggregate ./simus/student_teacher/ -s {strat}
+for strat in ["majority_voting", "naive_soft", "glad", "dawid_skene_clust[L=5]", "dawid_skene_clust[L=6]", "dawid_skene_clust[L=10]"]:
+  ! peerannot aggregate ./simus/student_teacher/ -s "{strat}"
+utx.run_dawid_skene("./simus/student_teacher")
 ```
 
 ```{python}
@@ -526,8 +529,8 @@ for strat in ["MV", "NaiveSoft", "DS", "GLAD", "DSWC[L=5]", "DSWC[L=6]", "DSWC[L
 #| tbl-cap: AccTrain metric on simulated correlated mistakes considering classical feature-blind label aggregation strategies
 #| code-fold: true
 simu_corr = Path.cwd() / 'simus' / "student_teacher"
-results = {"mv": [], "naivesoft": [], "glad": [], "ds": [], "dswc[l=5]": [],
-           "dswc[l=6]": [], "dswc[l=10]": []}
+results = {"majority_voting": [], "naive_soft": [], "glad": [], "dawid_skene": [], "dawid_skene_clust[l=5]": [],
+           "dawid_skene_clust[l=6]": [], "dawid_skene_clust[l=10]": []}
 for strategy in results.keys():
   path_labels = simu_corr / "labels" / f"labels_student-teacher_{strategy}.npy"
   ground_truth = np.load(simu_corr / "ground_truth.npy")
@@ -541,8 +544,8 @@ for strategy in results.keys():
           )
         )
   results[strategy].append(acc)
-results["NS"] = results["naivesoft"]
-results.pop("naivesoft")
+results["NS"] = results["naive_soft"]
+results.pop("naive_soft")
 results = pd.DataFrame(results, index=['AccTrain'])
 results.columns = map(str.upper, results.columns)
 results = results.style.set_table_styles(
@@ -694,17 +697,19 @@ The `aggregate-deep` command takes as input the path to the data folder, `--outp
 #| code-fold: false
 #| eval: false
 #| output: false
-for strat in ["MV", "NaiveSoft", "DS", "GLAD"]:
-  ! peerannot aggregate ./labelme/ -s {strat}
-  ! peerannot train ./labelme -o labelme_${strat} \
-    -K 8 --labels=./labelme/labels/labels_labelme_${strat}.npy \
+utx.run_dawid_skene("./labelme")
+for strat in ["majority_voting", "naive_soft", "glad"]:
+  ! peerannot aggregate ./labelme/ -s "{strat}"
+for strat in ["majority_voting", "naive_soft", "glad", "dawid_skene"]:
+  ! peerannot train ./labelme -o "labelme_${strat}" \
+    -K 8 --labels="./labelme/labels/labels_labelme_${strat}.npy" \
     --model modellabelme --n-epochs 500 -m 50 -m 150 -m 250 \
     --scheduler=multistep --lr=0.01 --num-workers=8 \
     --pretrained --data-augmentation --optimizer=adam \
     --batch-size=32 --img-size=224 --seed=1
 for strat in ["CrowdLayer", "CoNAL[scale=0]", "CoNAL[scale=1e-4]"]:
-  ! peerannot aggregate-deep ./labelme -o labelme_${strat} \
-    --answers ./labelme/answers.json -s ${strat} --model modellabelme \
+  ! peerannot aggregate-deep ./labelme -o "labelme_${strat}" \
+    --answers ./labelme/answers.json -s "${strat}" --model modellabelme \
     --img-size=224 --pretrained --n-classes=8 --n-epochs=500 --lr=0.001 \
     -m 300 -m 400 --scheduler=multistep --batch-size=228 --optimizer=adam \
     --num-workers=8 --data-augmentation --seed=1
@@ -1088,8 +1093,9 @@ With the obtained answers, we can look at the aforementioned aggregation strateg
 #| output: false
 #| code-fold: false
 
-for strat in ["MV", "NaiveSoft", "DS", "GLAD", "DSWC[L=2]", "DSWC[L=5]"]:
-  ! peerannot aggregate ./simus/discrete_difficulty/ -s {strat}
+for strat in ["majority_voting", "naive_soft", "glad", "dawid_skene_clust[L=2]", "dawid_skene_clust[L=5]"]:
+  ! peerannot aggregate ./simus/discrete_difficulty/ -s "{strat}"
+utx.run_dawid_skene("./simus/discrete_difficulty")
 ```
 ```{python}
 #| label: tbl-simu-discrete-diff
@@ -1097,8 +1103,8 @@ for strat in ["MV", "NaiveSoft", "DS", "GLAD", "DSWC[L=2]", "DSWC[L=5]"]:
 #| code-fold: true
 simu_corr = Path.cwd() / 'simus' / "discrete_difficulty"
 results = {
-  "mv": [], "naivesoft": [], "glad": [],
-  "ds": [], "dswc[l=2]": [], "dswc[l=5]": []
+  "majority_voting": [], "naive_soft": [], "glad": [],
+  "dawid_skene": [], "dawid_skene_clust[l=2]": [], "dawid_skene_clust[l=5]": []
   }
 for strategy in results.keys():
   path_labels = simu_corr / "labels" / f"labels_discrete-difficulty_{strategy}.npy"
@@ -1113,8 +1119,8 @@ for strategy in results.keys():
           )
         )
   results[strategy].append(acc)
-results["NS"] = results["naivesoft"]
-results.pop("naivesoft")
+results["NS"] = results["naive_soft"]
+results.pop("naive_soft")
 results = pd.DataFrame(results, index=['AccTrain'])
 results.columns = map(str.upper, results.columns)
 results = results.style.set_table_styles([dict(selector='th', props=[('text-align', 'center')])])
@@ -1227,8 +1233,9 @@ Note that NS and MV performance difference comes from the random tie-breakers in
 #| output: false
 #| eval: false
 #| code-fold: false
-for strat in ["MV", "NaiveSoft", "DS", "GLAD"]:
-  ! peerannot aggregate ./datasets/birds_audio -s {strat}
+for strat in ["majority_voting", "naive_soft", "glad"]:
+  ! peerannot aggregate ./datasets/birds_audio -s "{strat}"
+utx.run_dawid_skene("./datasets/birds_audio")
 ```
 ```{python}
 #| label: tbl-birds

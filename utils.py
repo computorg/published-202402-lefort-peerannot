@@ -17,6 +17,38 @@ import itertools
 sns.set_style("whitegrid")
 
 
+def run_dawid_skene(dataset, answers_file="answers.json", hard=False):
+    """Run the Dawid and Skene aggregation strategy and save the labels
+    the same way `peerannot aggregate -s dawid_skene` would.
+
+    Workaround for https://github.com/peerannot/peerannot/issues/45:
+    `peerannot aggregate -s dawid_skene` crashes because the CLI calls
+    `DawidSkene(answers, n_classes, **kwargs)` with `n_workers` passed
+    both positionally and as a keyword, while `DawidSkene.__init__`
+    expects `(answers, n_workers, n_classes)`. Calling the class
+    directly with the right argument order avoids the bug.
+    """
+    from peerannot.models.aggregation.dawid_skene import DawidSkene
+
+    dataset = Path(dataset).resolve()
+    with open(dataset / answers_file) as f:
+        answers = json.load(f)
+    with open(dataset / "metadata.json") as f:
+        metadata = json.load(f)
+
+    strat = DawidSkene(answers, metadata["n_workers"], metadata["n_classes"])
+    strat.run()
+    yhat = strat.get_answers() if hard else strat.get_probas()
+
+    filename = f"labels_{metadata['name']}_dawid_skene" + ("_hard" if hard else "")
+    path_results = dataset / "labels"
+    path_results.mkdir(parents=True, exist_ok=True)
+    path_file = path_results / (filename + ".npy")
+    np.save(path_file, yhat)
+    print(f"Aggregated labels stored at {path_file} with shape {yhat.shape}")
+    return path_file
+
+
 def figure_3():
     nrow = 5
     ncol = 5

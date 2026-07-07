@@ -2,6 +2,7 @@ name: peerannot
 channels:
   - conda-forge
 dependencies:
+  - python<3.14
   - jupyter
   - jupyter-cache
   - numpy
@@ -21,7 +22,7 @@ dependencies:
   - dash-daq
   - Pillow
   - pip:
-    - peerannot
+    - peerannot>=0.0.1.post43
     - torch
     - torchvision
     - torchmetrics
