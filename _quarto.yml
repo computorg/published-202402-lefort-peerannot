@@ -31,7 +31,7 @@ author:
     orcid: 0000-0002-3181-0634
     affiliations:
       - name: IMAG, Univ Montpellier, CNRS, IUF
-date: 05/07/2024
+date: 2024-05-07
 abstract: >+
   Crowdsourcing is a quick and easy way to collect labels for large datasets, involving many workers. However, workers often disagree with each other. Sources of error can arise from the workers' skills, but also from the intrinsic difficulty of the task. We present `peerannot`: a `Python` library for managing and learning from crowdsourced labels for classification. Our library allows users to aggregate labels from common noise models or train a deep learning-based classifier directly from crowdsourced labels. In addition, we provide an identification module to easily explore the task difficulty of datasets and worker capabilities.
 citation:
@@ -41,5 +41,6 @@ citation:
   publisher: "French Statistical Society"
   issn: "2824-7795"
   url: "https://computo-journal.org/published-202402-lefort-peerannot/"
+  issued: "2024-05-07"
 github-user: computorg
 repo: "published-202402-lefort-peerannot"
