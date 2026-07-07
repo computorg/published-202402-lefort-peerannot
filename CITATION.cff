@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: If you use or cite this article, please use the metadata provided in 'preferred-citation'.
+title: 'Peerannot: classification for crowdsourced image datasets with Python'
+authors:
+- family-names: Lefort
+  given-names: Tanguy
+  orcid: https://orcid.org/0009-0000-6710-3221
+  affiliation: IMAG, Univ Montpellier, CNRS, Inria, LIRMM
+- family-names: Charlier
+  given-names: Benjamin
+  affiliation: IMAG, Univ Montpellier, CNRS
+- family-names: Joly
+  given-names: Alexis
+  orcid: https://orcid.org/0000-0002-2161-9940
+  affiliation: Inria, LIRMM, Univ Montpellier, CNRS
+- family-names: Salmon
+  given-names: Joseph
+  orcid: https://orcid.org/0000-0002-3181-0634
+  affiliation: IMAG, Univ Montpellier, CNRS, IUF
+url: https://computo-journal.org/published-202402-lefort-peerannot/
+preferred-citation:
+  type: article
+  title: 'Peerannot: classification for crowdsourced image datasets with Python'
+  authors:
+  - family-names: Lefort
+    given-names: Tanguy
+    orcid: https://orcid.org/0009-0000-6710-3221
+    affiliation: IMAG, Univ Montpellier, CNRS, Inria, LIRMM
+  - family-names: Charlier
+    given-names: Benjamin
+    affiliation: IMAG, Univ Montpellier, CNRS
+  - family-names: Joly
+    given-names: Alexis
+    orcid: https://orcid.org/0000-0002-2161-9940
+    affiliation: Inria, LIRMM, Univ Montpellier, CNRS
+  - family-names: Salmon
+    given-names: Joseph
+    orcid: https://orcid.org/0000-0002-3181-0634
+    affiliation: IMAG, Univ Montpellier, CNRS, IUF
+  journal: Computo
+  issn: 2824-7795
+  url: https://computo-journal.org/published-202402-lefort-peerannot/
+  publisher:
+    name: French Statistical Society
+  doi: 10.57750/qmaz-gr91
+  year: 2024
+doi: 10.57750/qmaz-gr91
+date-released: '2024-02-01'
