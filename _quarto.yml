@@ -4,3 +4,41 @@ project:
     - main.qmd
     - README.qmd
 status: published
+
+title: "Peerannot: classification for crowdsourced image datasets with Python"
+author:
+  - name: Tanguy Lefort
+    corresponding: true
+    email: tanguy.lefort@umontpellier.fr
+    url: https://tanglef.github.io
+    orcid: 0009-0000-6710-3221
+    affiliations:
+      - name: IMAG, Univ Montpellier, CNRS, Inria, LIRMM
+  - name: Benjamin Charlier
+    email: benjamin.charlier@umontpellier.fr
+    url: https://miat.inrae.fr/bcharlier/
+    affiliations:
+      - name: IMAG, Univ Montpellier, CNRS
+  - name: Alexis Joly
+    email: alexis.joly@inria.fr
+    url: http://www-sop.inria.fr/members/Alexis.Joly/wiki/pmwiki.php
+    orcid: 0000-0002-2161-9940
+    affiliations:
+      - name: Inria, LIRMM, Univ Montpellier, CNRS
+  - name: Joseph Salmon
+    email: joseph.salmon@umontpellier.fr
+    url: http://josephsalmon.eu/
+    orcid: 0000-0002-3181-0634
+    affiliations:
+      - name: IMAG, Univ Montpellier, CNRS, IUF
+date: 05/07/2024
+abstract: >+
+  Crowdsourcing is a quick and easy way to collect labels for large datasets, involving many workers. However, workers often disagree with each other. Sources of error can arise from the workers' skills, but also from the intrinsic difficulty of the task. We present `peerannot`: a `Python` library for managing and learning from crowdsourced labels for classification. Our library allows users to aggregate labels from common noise models or train a deep learning-based classifier directly from crowdsourced labels. In addition, we provide an identification module to easily explore the task difficulty of datasets and worker capabilities.
+citation:
+  type: article-journal
+  container-title: "Computo"
+  doi: "10.57750/qmaz-gr91"
+  publisher: "French Statistical Society"
+  issn: "2824-7795"
+github-user: computorg
+repo: "published-202402-lefort-peerannot"
