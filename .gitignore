@@ -16,6 +16,7 @@ _environment
 /.joblib
 /.pytest_cache/
 scripts/__pycache__/
+__pycache__/
 
 # Quarto tmp files
 /.quarto/
@@ -47,3 +48,5 @@ DS_Store
 
 
 **/*.quarto_ipynb
+
+simus/
