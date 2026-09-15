@@ -47,3 +47,16 @@ github-user: computorg
 repo: "published-202402-lefort-peerannot"
 
 google-scholar: true
+subtitle: ""
+date-modified: last-modified
+description: |
+  Crowdsourcing is a quick and easy way to collect labels for large datasets, involving many workers.
+  However, it is common for workers to disagree with each other.
+  Sources of error can arise from the workers' skills, but also from the intrinsic difficulty of the task.
+  We introduce `peerannot`, a Python library for managing and learning from crowdsourced labels of image classification tasks.
+keywords: [crowdsourcing, label noise, task difficulty, worker ability, classification]
+bibliography: references.bib
+jupyter: python3
+format:
+  computo-html: default
+  computo-pdf: default
